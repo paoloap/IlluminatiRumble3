@@ -31,6 +31,7 @@ case $x in
 	7)
 	y="Eugenio Spagnolo"
 esac
+sleep 4
 echo "Il primo estratto è..."
 sleep 4
 echo "Un po' di suspance..."

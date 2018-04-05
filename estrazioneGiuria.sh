@@ -1,5 +1,6 @@
+#!/bin/bash
 # IlluminatiRumble3
-Script in bash per effettuare l'estrazione dei due membri della Giuria di Qualità per l'Illuminati Rumble 3
+# Script in bash per effettuare l'estrazione dei due membri della Giuria di Qualità per l'Illuminati Rumble 3
 echo "Ciao, sn io."
 sleep 4
 echo "Iniziamo l'estrazione per la Giuria di Qualità"

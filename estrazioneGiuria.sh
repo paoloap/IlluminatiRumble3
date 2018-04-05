@@ -31,7 +31,6 @@ case $x in
 	7)
 	y="Eugenio Spagnolo"
 esac
-sleep 4
 echo "Il primo estratto è..."
 sleep 4
 echo "Un po' di suspance..."
@@ -48,7 +47,7 @@ echo "Pronti?"
 sleep 4
 echo "Via."
 z=$(($RANDOM % 7 + 1))
-while [$z -eq $x]; do
+while [ $z -eq $x ]; do
 z=$(($RANDOM % 7 + 1))
 done
 case $z in

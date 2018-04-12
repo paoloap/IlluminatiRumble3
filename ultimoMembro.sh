@@ -1,6 +1,6 @@
 #!/bin/bash
 # IlluminatiRumble3
-# Script in bash per effettuare l'estrazione dei due membri della Giuria di Qualità per l'Illuminati Rumble 3
+# Script in bash per effettuare l'estrazione dell'ultimo membro della Giuria di Qualità
 echo "Ciao, sn io."
 sleep 4
 echo "Iniziamo l'estrazione per la Giuria di Qualità"
@@ -8,7 +8,7 @@ sleep 4
 echo "Pronti?"
 sleep 4
 echo "Via."
-x=$(($RANDOM % 7 + 1))
+x=$(($RANDOM % 4 + 1))
 case $x in
 	1)
 	y="Michele Andrea Giustolisi"
@@ -17,7 +17,7 @@ case $x in
 	y="Paola Vitale"
 ;;
 	3)
-	y="Susy Etionsa
+	y="Susy Etionsa"
 ;;
 	4)
 	y="Alice Ildegarda D'Orleans"

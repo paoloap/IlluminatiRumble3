@@ -8,30 +8,38 @@ sleep 4
 echo "Pronti?"
 sleep 4
 echo "Via."
-x=$(($RANDOM % 7 + 1))
-case $x in
-	1) y="Francesco Saverino" ;;
-	2) y="Alessandro Gurrieri" ;;
-	3) y="Marta Coppa" ;;
-	4) y="Andrea Cavalieri" ;;
-	5) y="Joseph Mengele" ;;
-	6) y="Tirth Trivedi" ;;
-	7) y="Dario Sortino" ;;
-	8) y="Edoardo De Matteis" ;;
-	9) y="Valerio Petrella" ;;
-	10) y="Andrea Rondinelli" ;;
-	11) y="Antonio Cardone" ;;
-	12) y="Majkol Ilijev" ;;
-	13) y="Emanuele Pasqui" ;;
-	14) y="Giorgia Plaisant" ;;
-	15) y="Giuseppe Cosentino" ;;
-	16) y="Citlali Ebe Sdao" ;;
-	17) y="Omid Shafiyi" ;;
-	18) y="Gaetano Colombrita" ;;
-	19) y="Michelangelo Daresi" ;;
-	20) y="Giuseppe Di Gregorio" ;;
-
-esac
+AMMESSI=(true true true true true true true true true true true true true true true true true true true true false)
+x=20
+for run in {1..20}
+do
+	while [ ! AMMESSI[$x] ]
+	do
+		x=$(( $RANDOM % 20 ))
+	done
+	AMMESSI[$x]=false
+	case $x in
+		0) y="Francesco Saverino" ;;
+		1) y="Alessandro Gurrieri" ;;
+		2) y="Marta Coppa" ;;
+		3) y="Andrea Cavalieri" ;;
+		4) y="Joseph Mengele" ;;
+		5) y="Tirth Trivedi" ;;
+		6) y="Dario Sortino" ;;
+		7) y="Edoardo De Matteis" ;;
+		8) y="Valerio Petrella" ;;
+		9) y="Andrea Rondinelli" ;;
+		10) y="Antonio Cardone" ;;
+		11) y="Majkol Ilijev" ;;
+		12) y="Emanuele Pasqui" ;;
+		13) y="Giorgia Plaisant" ;;
+		14) y="Giuseppe Cosentino" ;;
+		15) y="Citlali Ebe Sdao" ;;
+		16) y="Omid Shafiyi" ;;
+		17) y="Gaetano Colombrita" ;;
+		18) y="Michelangelo Daresi" ;;
+		19) y="Giuseppe Di Gregorio" ;;
+	esac
+done
 convert test.gif -fill white -draw "rectangle 806,618 1056,900" -font arial.ttf -pointsize 45 -fill black -annotate +810+760 "Alessandro\nGurrieri" test2.gif
 echo "Il primo estratto è..."
 sleep 4

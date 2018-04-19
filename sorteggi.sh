@@ -18,6 +18,22 @@ echo "Il terzo al gruppo C, il quarto al D, il quinto al E, il sesto di nuovo al
 sleep 6
 echo "E cosi' via."
 sleep 3
+echo "La prime sfide avverranno domenica, le seconde martedi', le terze giovedi'"
+sleep 5
+echo "Lo so che dovevano iniziare sabato, ma alla fine ho fatto tardi, stacce"
+sleep 5
+echo "Non ci saranno sorteggi su quali sfide avverrano prima e quali dopo"
+sleep 4
+echo "Saranno calcolate automaticamente in base ai sorteggi, secondo la seguente logica:"
+sleep 6
+echo "Prime sfide: primo estratto di un gruppo vs secondo e terzo vs quarto."
+sleep 5
+echo "Seconde sfide: primo vs terzo e secondo vs quarto"
+sleep 4
+echo "Terze sfide: primo vs quarto e secondo vs terzo"
+sleep 4
+echo "Facile, no?"
+sleep 2
 echo "Lo script va un po' lento, ci vuole tipo un minuto ad estrazione"
 sleep 5
 echo "Il perche' lo scoprirete tra poco, siate pazienti"

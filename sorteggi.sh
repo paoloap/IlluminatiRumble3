@@ -7,7 +7,7 @@ echo "Iniziamo i sorteggi"
 echo "Pronti?"
 echo "Via."
 line=""
-echo "GIRONE A;GIRONEB;GIRONE C;GIRONE D;GIRONE E" > tabellone.csv
+echo "GIRONE A;GIRONE B;GIRONE C;GIRONE D;GIRONE E" > tabellone.csv
 AMMESSI=(true true true true true true true true true true true true true true true true true true true true false)
 x=20
 for run in {1..20}
@@ -55,6 +55,7 @@ do
 	ffmpeg -i estratto.gif 02.mp4
 	ffmpeg -f concat -i videos estratto.mp4
 	cvlc --fullscreen --play-and-exit estratto.mp4
+	
 	rm estratto.gif
 	rm 02.mp4
 	rm estratto.mp4

@@ -2,9 +2,32 @@
 # IlluminatiRumble3
 # Script sorteggi
 rm tabellone.csv
-echo "Ciao, sn io."
+echo "Ciao, sn d nuovo io."
+sleep 3
 echo "Iniziamo i sorteggi"
+sleep 3
+echo "Siete emozionati? Per prima cosa vi do qualche informazione preliminare."
+sleep 5
+echo "Ci saranno 5 gruppi da 4 persone."
+sleep 4
+echo "Il primo estratto andra' al gruppo A"
+sleep 3
+echo "Il secondo estratto al gruppo B"
+sleep 3
+echo "Il terzo al gruppo C, il quarto al D, il quinto al E, il sesto di nuovo al gruppo A"
+sleep 6
+echo "E cosi' via."
+sleep 3
+echo "Lo script va un po' lento, ci vuole tipo un minuto ad estrazione"
+sleep 5
+echo "Il perche' lo scoprirete tra poco, siate pazienti"
+sleep 4
+echo "ai kapito pinnolone??"
+sleep 3
+echo "Bene. Cominciamo."
+sleep 3
 echo "Pronti?"
+sleep 3
 echo "Via."
 line=""
 echo "GIRONE A;GIRONE B;GIRONE C;GIRONE D;GIRONE E" > tabellone.csv

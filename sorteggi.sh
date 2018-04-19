@@ -1,18 +1,18 @@
 #!/bin/bash
 # IlluminatiRumble3
 # Script sorteggi
+rm tabellone.csv
 echo "Ciao, sn io."
-sleep 4
 echo "Iniziamo i sorteggi"
-sleep 4
 echo "Pronti?"
-sleep 4
 echo "Via."
+line=""
+echo "GIRONE A;GIRONEB;GIRONE C;GIRONE D;GIRONE E" > tabellone.csv
 AMMESSI=(true true true true true true true true true true true true true true true true true true true true false)
 x=20
 for run in {1..20}
 do
-	while [ ! AMMESSI[$x] ]
+	while [ ${AMMESSI[$x]} = false ]
 	do
 		x=$(( $RANDOM % 20 ))
 	done
@@ -39,79 +39,26 @@ do
 		18) y="Michelangelo Daresi" ;;
 		19) y="Giuseppe Di Gregorio" ;;
 	esac
+#	echo "$y"
+	if  ((run % 5)); then
+		line="$line$y;"
+	else
+		line="$line$y"
+		echo "$line" >> tabellone.csv
+		line=""
+	fi
+#	cat tabellone.csv
+	name=`echo "$y" | sed -r 's/ /\\n/g'`
+	cd gif
+	
+	convert base.gif -fill white -draw "rectangle 806,618 1056,900" -font arial.ttf -pointsize 45 -fill black -annotate +810+760 "$name" estratto.gif
+	ffmpeg -i estratto.gif 02.mp4
+	ffmpeg -f concat -i videos estratto.mp4
+	cvlc --fullscreen --play-and-exit estratto.mp4
+	rm estratto.gif
+	rm 02.mp4
+	rm estratto.mp4
+	cd ..
 done
-convert test.gif -fill white -draw "rectangle 806,618 1056,900" -font arial.ttf -pointsize 45 -fill black -annotate +810+760 "Alessandro\nGurrieri" test2.gif
-echo "Il primo estratto è..."
-sleep 4
-echo "Un po' di suspance..."
-sleep 5
-echo "$y!!!"
-sleep 5
-echo "Complimenti, $y, è un bel vanto."
-sleep 4
-echo "No ma davvero, sono serio."
-sleep 10
-echo "Ora passiamo al secondo estratto."
-sleep 5
-echo "Pronti?"
-sleep 4
-echo "Via."
-z=$(($RANDOM % 7 + 1))
-while [ $z -eq $x ]; do
-z=$(($RANDOM % 7 + 1))
-done
-case $z in
-	1)
-	y="Francesco Saverino"
-;;
-	2)
-	y="Alessandro Gurrieri"
-;;
-	3)
-	y="Michele Andrea Giustolisi"
-;;
-	4)
-	y="Marta Coppa"
-;;
-	5)
-	y="Andrea Cavalieri"
-;;
-	6)
-	y="Daniele Garofalo"
-;;
-	7)
-	y="Eugenio Spagnolo"
-esac
-sleep 4
-echo "Mamma mia che ansia, vero?"
-sleep 5
-echo "Certo che bisogna proprio avere una vita di merda per dare importanza a queste cose, raga"
-sleep 10
-echo "Mica come me, che scrivo uno script in bash per fare l'estrazione della Giuria di Qualità in una gara di meme."
-sleep 10
-echo "Comunque, il secondo..."
-sleep 2
-echo "E ULTIMO"
-sleep 2
-echo "estratto..."
-sleep 4
-echo "È..."
-sleep 10
-echo "STOCAZZO"
-sleep 2
-echo "no dai scherzo"
-sleep 5
-echo "Il secondo, e ultimo, estratto, è..."
-sleep 3
-echo "È..."
-sleep 10
-echo "$y!!!!!!!!!!!!!!!!"
-sleep 5
-echo "Quindi i due estratti sono quello di prima, che non mi ricordo perché non avevo voglia di usare due variabili diverse, e $y!"
-sleep 10
-echo "Spero vi siate divertiti. Gli altri diventano ufficialmente partecipanti alla Rumble. Non vi lamentate e iniziate ad allenarvi, a breve nuove disposizioni."
-sleep 10
-echo "Ah, Susy, non rompere. Troverò qualcosa di figo da farti fare, tipo non lo so eleggere il Meme Eleganza dopo ogni turno come a Miss Italia. Insomma qualcosa da farti fare lo trovo, ora non ho voglia di pensarci."
-sleep 10
-echo "Ocucchiti."
+
 exit 0

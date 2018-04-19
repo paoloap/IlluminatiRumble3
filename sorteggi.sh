@@ -100,5 +100,15 @@ do
 	rm estratto.mp4
 	cd ..
 done
-
+clear
+echo "Bene, le estrazioni sono finalmente finite."
+sleep 5
+echo "Dite che sono durate troppo?"
+sleep 4
+echo "E chi ve se 'ncula?"
+sleep 3
+echo "Qui sotto, il tabellone definitivo coi gironi."
+sleep 4
+cat tabellone.csv | column -s ';' -t | sed -r 's/  ([A-Z])/  | \1/g'
+echo "\n\n\n\nAddio."
 exit 0
